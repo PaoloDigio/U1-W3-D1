@@ -3,13 +3,42 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 
+const link = (str1, str2) => {
+  const newStr1 = str1.slice(0, 2);
+  const newStr2 = str2.slice(-3);
+  console.log(newStr1);
+  console.log(newStr2);
+  const str = newStr1.concat(newStr2);
+  const finalStr = str.toUpperCase();
+
+  console.log(finalStr);
+};
+
+link("ciao", "byissimo");
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
+const arrayTen = () => {
+  let arr = [];
+  for (let i = 0; i < 10; i++) {
+    const randNum = Math.floor(Math.random() * 100);
+    arr.push(randNum);
+  }
+  return arr;
+};
+
+console.log(arrayTen());
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const evenNums = numbers.filter((num) => num % 2 === 0);
+console.log(evenNums);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
