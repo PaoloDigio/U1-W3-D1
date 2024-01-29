@@ -6,15 +6,12 @@
 const link = (str1, str2) => {
   const newStr1 = str1.slice(0, 2);
   const newStr2 = str2.slice(-3);
-  console.log(newStr1);
-  console.log(newStr2);
   const str = newStr1.concat(newStr2);
   const finalStr = str.toUpperCase();
-
-  console.log(finalStr);
+  return finalStr;
 };
 
-link("ciao", "byissimo");
+console.log(link("ciao", "byissimo"));
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
@@ -23,7 +20,7 @@ link("ciao", "byissimo");
 const arrayTen = () => {
   let arr = [];
   for (let i = 0; i < 10; i++) {
-    const randNum = Math.floor(Math.random() * 100);
+    const randNum = Math.floor(Math.random() * 101);
     arr.push(randNum);
   }
   return arr;
@@ -43,14 +40,26 @@ console.log(evenNums);
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+let sum = 0;
+numbers.forEach((num) => (sum += num));
+console.log(sum);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+const startValue = 0;
+const total = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, startValue);
+console.log(total);
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+const numMapped = function (n) {
+  return numbers.map((num) => num * n);
+};
+console.log(numMapped(4));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
